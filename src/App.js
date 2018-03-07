@@ -51,14 +51,22 @@ toPencilActivate = ()=>{
         for(let i = 0; i<this.rows; i++){
             for(let j = 0; j<this.cols; j++){
                 let counter = 0;
-                if (i > 0) if (original[i - 1][j]) counter++;
-                if (i > 0 && j > 0) if (original[i - 1][j - 1]) counter++;
-                if (i > 0 && j < this.cols - 1) if (original[i - 1][j + 1]) counter++;
-                if (j < this.cols - 1) if (original[i][j + 1]) counter++;
-                if (j > 0) if (original[i][j - 1]) counter++;
-                if (i < this.rows - 1) if (original[i + 1][j]) counter++;
-                if (i < this.rows - 1 && j > 0) if (original[i + 1][j - 1]) counter++;
-                if (i < this.rows - 1 && this.cols - 1) if (original[i + 1][j + 1]) counter++;
+                if (i > 0) 
+                if (original[i - 1][j]) counter++;
+                if (i > 0 && j > 0) 
+                if (original[i - 1][j - 1]) counter++;
+                if (i > 0 && j < this.cols - 1) 
+                if (original[i - 1][j + 1]) counter++;
+                if (j < this.cols - 1) 
+                if (original[i][j + 1]) counter++;
+                if (j > 0) 
+                if (original[i][j - 1]) counter++;
+                if (i < this.rows - 1) 
+                if (original[i + 1][j]) counter++;
+                if (i < this.rows - 1 && j > 0) 
+                if (original[i + 1][j - 1]) counter++;
+                if (i < this.rows - 1 && this.cols - 1) 
+                if (original[i + 1][j + 1]) counter++;
                 if (original[i][j] && (counter < 2 || counter > 3)) copy[i][j] = false;
                 if (!original[i][j] && counter === 3) copy[i][j] = true;
                 console.log('engine inside')
