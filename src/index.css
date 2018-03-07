@@ -1,0 +1,85 @@
+
+.main {
+  background-color: black;
+  clear: both;
+  width: 80%;
+  margin: auto;
+}
+.left{
+  float: left;
+}
+.right{
+  float:  right;
+  border: 1px solid lightgray;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
+  margin: 20px 10px;
+  width: 230px;
+}
+.btn{
+  padding: 10px 25px;
+  margin: 10px;
+  color: white;
+  width: 200px;
+  border-radius: 10px;
+  background-color: #24292E;
+  border: solid 1px #24292E;
+}
+.btn:focus {
+  outline:0;
+}
+.btn:hover{
+  background-color: #3F4448;
+}
+.btn:active{
+  background-color: black;
+}
+.checkbox{
+  cursor: pointer;
+  height: 25px;
+  width: 25px;
+  background-color: #24292E;
+}
+.checkbox:focus {
+  outline:0;
+}
+.cell {
+  display: inline-block;       
+  border-bottom: 0.01em solid lightgray;
+  border-right: 0.01em solid lightgray;
+  width: 0.6em;
+  height: 0.6em;
+  }
+
+.off {
+  background-color: white;
+}
+
+.on {
+  background-color: green;
+}
+  
+.cell:hover { 
+  background: #4CAF50;
+}
+
+.holder {
+  width: 150px;
+  line-height: 0;
+  margin: auto;
+  box-shadow: 0px 0px 20px lightgray;
+  margin-top: 20px;
+}
+  
+h1, h2, h3, h4 {
+  color: #24292E;;
+  margin: auto;
+  text-align: center;
+  margin-top: 10px;
+}
+
+
+
+
+
