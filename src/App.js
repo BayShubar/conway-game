@@ -5,7 +5,7 @@ import Controller from './Controller'
 class App extends React.Component{
     constructor(props){
         super(props)
-        this.speed = 200;
+        this.speed = 250;
         this.rows = 50;
         this.cols = 70;
         this.pencilActive = false;
@@ -51,24 +51,46 @@ toPencilActivate = ()=>{
         for(let i = 0; i<this.rows; i++){
             for(let j = 0; j<this.cols; j++){
                 let counter = 0;
-                if (i > 0) 
-                if (original[i - 1][j]) counter++;
+                    
+                //this will check top left diogonal cell
                 if (i > 0 && j > 0) 
-                if (original[i - 1][j - 1]) counter++;
+                    if (original[i - 1][j - 1]) counter++;
+
+                //this will check top right diogonal cell
                 if (i > 0 && j < this.cols - 1) 
-                if (original[i - 1][j + 1]) counter++;
-                if (j < this.cols - 1) 
-                if (original[i][j + 1]) counter++;
-                if (j > 0) 
-                if (original[i][j - 1]) counter++;
+                    if (original[i - 1][j + 1]) counter++;
+
+                //this will check top cell
+                if (i > 0) 
+                    if (original[i - 1][j]) counter++;
+                
+                //this will check bottom cell
                 if (i < this.rows - 1) 
-                if (original[i + 1][j]) counter++;
+                    if (original[i + 1][j]) counter++;
+
+                //this will check right cell 
+                if (j < this.cols - 1) 
+                    if (original[i][j + 1]) counter++;
+
+                //this will check left cell
+                if (j > 0) 
+                    if (original[i][j - 1]) counter++;
+                
+                // this will check bottom left cell
                 if (i < this.rows - 1 && j > 0) 
-                if (original[i + 1][j - 1]) counter++;
+                    if (original[i + 1][j - 1]) counter++;
+                
+                // this will check bottom right cell
                 if (i < this.rows - 1 && this.cols - 1) 
-                if (original[i + 1][j + 1]) counter++;
-                if (original[i][j] && (counter < 2 || counter > 3)) copy[i][j] = false;
-                if (!original[i][j] && counter === 3) copy[i][j] = true;
+                    if (original[i + 1][j + 1]) counter++;
+
+                //if overpopulated or life not enough then it will die
+                if (original[i][j] && (counter < 2 || counter > 3)) 
+                    copy[i][j] = false;
+                    
+                //new life will be revive
+                if (!original[i][j] && counter === 3) 
+                    copy[i][j] = true;
                 console.log('engine inside')
             }
         }
